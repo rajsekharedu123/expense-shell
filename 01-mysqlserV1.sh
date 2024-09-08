@@ -32,10 +32,6 @@ echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
 CHECK_ROOT
 
-if [ $# -eq 0 ]
-then
-    USAGE
-fi
 
 #dnf install mysql-server -y &>>$LOG_FILE
 echo "install mysql-server"
