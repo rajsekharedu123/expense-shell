@@ -46,7 +46,7 @@ VALIDATE $?  "STARTED MYSQL"
 systemctl status mysqld &>>$LOG_FILE
 VALIDATE $? "CHECKING STATUS MYSQL"
 
-mysql -h 10.0.4.1 -u root -pExpenseApp@1 -e 'show databases;' &>>$LOG_FILE
+mysql -h mysql.dawsrajs.online -u root -pExpenseApp@1 -e 'show databases;' &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
     echo "MySQL root password is not setup, setting now" &>>$LOG_FILE
