@@ -45,3 +45,7 @@ VALIDATE $?  "STARTED MYSQL"
 
 systemctl status mysqld &>>$LOG_FILE
 VALIDATE $? "CHECKING STATUS MYSQL"
+
+mysql_secure_installation --set-root-pass ExpenseApp@1
+VALIDATE $? "settingup root user password"
+
