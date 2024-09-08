@@ -69,5 +69,5 @@ VALIDATE $? "Extracting backend application code"
 cd /app
 npm install &>>$LOG_FILE
 VALIDATE $? "Install npm"
-
+cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.service
 
