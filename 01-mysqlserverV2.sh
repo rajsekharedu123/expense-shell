@@ -36,14 +36,12 @@ CHECK_ROOT
 dnf install mysql-server -y &>>$LOG_FILE
 VALIDATE $? "installing mysql-server"
 
-systemctl status mysqld &>>$LOG_FILE
-VALIDATE $? "CHECKING STATUS MYSQL"
 
 systemctl enable mysqld &>>$LOG_FILE
-VALIDATE $? "ENABLED MYSQL"
+VALIDATE $?  "ENABLED MYSQL"
 
 systemctl start mysqld &>>$LOG_FILE
-VALIDATE $? "STARTED MYSQL"
+VALIDATE $?  "STARTED MYSQL"
 
 systemctl status mysqld &>>$LOG_FILE
 VALIDATE $? "CHECKING STATUS MYSQL"
