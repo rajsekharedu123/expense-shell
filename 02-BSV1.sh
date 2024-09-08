@@ -22,6 +22,19 @@ VALIDATE()
     fi
 }
 
+CHECK_ROOT()
+{
+    if [ $USERID -ne 0 ]
+    then 
+        echo -e "$R Please run this script with root priveleges $N" | tee -a $LOG_FILE
+        exit 1
+    fi
+}
+
+echo "$0 script started executing at $(date)"
+
+CHECK_ROOT
+
 dnf module disable nodejs -y
 VALIDATE $? "disables nodejs"
 
