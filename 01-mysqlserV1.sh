@@ -37,7 +37,8 @@ then
     USAGE
 fi
 
-dnf install mysql-server -y &>>$LOG_FILE
+#dnf install mysql-server -y &>>$LOG_FILE
+echo "install mysql-server"
 VALIDATE $? "installing mysql-server"
 
 systemctl status mysqld &>>$LOG_FILE
